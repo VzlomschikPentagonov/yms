@@ -1,0 +1,6 @@
+Name: UnnamedProject
+Tempo (BPM): 120
+Samples/beat: 60
+Pattern length: 240
+Sample rate: 44100
+Bit depth: 24
