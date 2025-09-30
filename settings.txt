@@ -3,5 +3,6 @@ Tracks: 4
 Tempo (BPM): 120
 Samples/beat: 60
 Pattern length: 240
+Length: 1.0
 Sample rate: 44100
 Bit depth: 24
