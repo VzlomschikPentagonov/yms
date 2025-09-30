@@ -1,8 +1,8 @@
-Name: UnnamedProject
-Tracks: 4
-Tempo (BPM): 120
-Samples/beat: 60
-Pattern length: 240
-Length: 1.0
-Sample rate: 44100
-Bit depth: 24
+Name: test
+Tracks: 6
+BPM: 150
+Samples/beat: 50
+Pattern length: 120
+Length: 1.5
+Frequency: 44100
+Bit depth: 16
