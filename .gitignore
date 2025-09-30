@@ -1,4 +1,4 @@
 *.pyc
 *.cpython-313
 *.wav
-__pycache__
+*.bak

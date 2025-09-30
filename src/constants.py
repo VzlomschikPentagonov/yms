@@ -1,13 +1,13 @@
-from ctypes import c_uint8, c_uint16, c_uint32, c_float
+from ctypes import *
 
 HEADER_SIZE: c_uint8 = c_uint8(19)
 NAME: int = 0
+NUM_TRACKS: int = 1
 TEMPO: int = 2
-LENGTH: int = 5
-FREQ: int = 6
 SPB: int = 3
 P_LEN: int = 4
-NUM_TRACKS: int = 1
+LENGTH: int = 5
+FREQ: int = 6
 BITS: int = 7
 NUM_VALUES: int = 7
 TEMPO_DEFAULT: c_float = c_float(120.0)
@@ -28,4 +28,3 @@ SETTINGS_FILE_SYNTAX: dict[str: str] = {"e": "Name: ",
                                         "g": "Length: ",
                                         "q": "Frequency: ",
                                         " ": "Bit depth: "}
-
