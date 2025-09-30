@@ -1,3 +1,5 @@
+from functions import *
+
 def main() -> None:
     h: Header = Header()
     b: bytes = get_header(h)
@@ -18,3 +20,4 @@ def main() -> None:
 
 if __name__ == "__main__":
    main()
+
