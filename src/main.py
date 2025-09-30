@@ -1,11 +1,10 @@
 from functions import *
 
 def main() -> None:
-    h: Header = Header()
+    s: tuple = read_settings()
+    h: Header = Header(*s)
     b: bytes = get_header(h)
     print(b, len(b))
-    for i in range(4):
-        print(b[2+i])
     # f: BinaryIO = open(h.name + ".yusm", "w+b")
     # f.write(b)
     # f.seek(2)
@@ -20,4 +19,5 @@ def main() -> None:
 
 if __name__ == "__main__":
    main()
+
 
