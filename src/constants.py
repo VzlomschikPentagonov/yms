@@ -9,6 +9,7 @@ SPB: int = 3
 P_LEN: int = 4
 NUM_TRACKS: int = 1
 BITS: int = 7
+NUM_VALUES: int = 7
 TEMPO_DEFAULT: c_float = c_float(120.0)
 SPB_DEFAULT: c_uint16 = c_uint16(60)
 P_LEN_DEFAULT: c_uint16 = c_uint16(240)
@@ -16,6 +17,9 @@ NUM_TRACKS_DEFAULT: c_uint8 = c_uint8(4)
 LENGTH_DEFAULT: float = c_float(1.0)
 FREQ_DEFAULT: c_uint32 = c_uint32(44100)
 BITS_DEFAULT: c_uint8 = c_uint8(24)
+SIZEOF_VALUES: list[int] = [1, 4, 2, 2, 4, 4, 1]
+VAL_TYPES: tuple = (c_uint8(), c_float(), c_uint16(), c_uint16(),
+                    c_float(), c_uint32(), c_uint8())
 SETTINGS_FILE_SYNTAX: dict[str: str] = {"e": "Name: ",
                                         "c": "Tracks: ",
                                         ":": "BPM: ",
@@ -24,3 +28,4 @@ SETTINGS_FILE_SYNTAX: dict[str: str] = {"e": "Name: ",
                                         "g": "Length: ",
                                         "q": "Frequency: ",
                                         " ": "Bit depth: "}
+
