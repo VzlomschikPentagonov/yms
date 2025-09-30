@@ -1,4 +1,5 @@
 Name: UnnamedProject
+Tracks: 4
 Tempo (BPM): 120
 Samples/beat: 60
 Pattern length: 240
