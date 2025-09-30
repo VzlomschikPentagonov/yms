@@ -1,4 +1,5 @@
-from ctypes import c_uint8, c_uint16, c_uint32, c_float
+from constants import *
+from ctypes import c_uint16, c_uint32, c_float
 
 class Header:
     def __init__(self,
