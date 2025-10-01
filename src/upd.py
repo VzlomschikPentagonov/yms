@@ -16,7 +16,14 @@ def read_header(name: str) -> list:
         value: type(VAL_TYPES[i]) = ptr.contents
         settings.append(value.value)
     return settings
-  
+
+def read_pattern(name: str) -> list[int]:
+    pattern_file: TextIO = open(name + ".pat")
+    pattern_data: list[str] = pattern_file.readlines()
+    for line in range(len(pattern_data)):
+        pattern_data[line] = pattern_data[line].replace(" ", "")
+    print(pattern_data)
+
   #classes
   
   #_Field: ctype | pytype = CONST_VAL
