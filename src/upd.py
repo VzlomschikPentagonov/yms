@@ -1,3 +1,5 @@
+from re import match
+
 #constants
 
 VAL_TYPES_2: tuple = (int(), float(), int(), int(),
@@ -17,14 +19,24 @@ def read_header(name: str) -> list:
         settings.append(value.value)
     return settings
 
-def read_pattern(name: str) -> list[int]:
+def read_pattern(name: str) -> list[Sample]:
     pattern_file: TextIO = open(name + ".pat")
     pattern_data: list[str] = pattern_file.readlines()
+    sample_list: list[Sample] = []
     for line in range(len(pattern_data)):
         pattern_data[line] = pattern_data[line].replace(" ", "")
+        if match("\\d.+:\\d.*-\\d.*", s):
+            
     print(pattern_data)
+    return []
 
   #classes
-  
+class Sample:
+    def __init__(self, note: c_uint8 = 69,
+                 start: c_uint16 = 0,
+                 length: c_uint16 = 0):
+        self.note = note
+        self.start = start
+        self.length = length
   #_Field: ctype | pytype = CONST_VAL
   #Example: tempo: c_float | float = TEMPO_DEFAULT
