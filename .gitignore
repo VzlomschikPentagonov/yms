@@ -3,3 +3,4 @@
 *.wav
 *.bak
 *.yusm
+__pycache__
