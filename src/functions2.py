@@ -23,5 +23,7 @@ def read_pattern(name: str) -> list[Sample]:
         print(pattern_data[line])
         if match("\\d+:\\d+-\\d+", pattern_data[line]):
             sample_list.append(Sample(0, 0, 0))
+        elif match("\\d+:\\d+/\\d+", pattern_data[line]):
+            sample_list.append(Sample(0, 0, 0))
     print(pattern_data)
     return sample_list
