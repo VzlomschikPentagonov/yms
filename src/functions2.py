@@ -14,6 +14,9 @@ def read_header(name: str) -> list:
         settings.append(value.value)
     return settings
 
+def pat_tokenize(line: str) -> tuple[int, int, int]:
+    return 0, 0, 0
+
 def read_pattern(name: str) -> list[Sample]:
     pattern_file: TextIO = open(name + ".pat")
     pattern_data: list[str] = pattern_file.readlines()
@@ -21,9 +24,9 @@ def read_pattern(name: str) -> list[Sample]:
     for line in range(len(pattern_data)):
         pattern_data[line] = pattern_data[line].replace(" ", "")
         print(pattern_data[line])
-        if match("\\d+:\\d+-\\d+", pattern_data[line]):
+        if match(REM_ABS_LENGTH, pattern_data[line]):
             sample_list.append(Sample(0, 0, 0))
-        elif match("\\d+:\\d+/\\d+", pattern_data[line]):
-            sample_list.append(Sample(0, 0, 0))
+        elif match(REM_REL_LENGTH, pattern_data[line]):
+            sample_list.append(Sample(1, 1, 1))
     print(pattern_data)
     return sample_list
