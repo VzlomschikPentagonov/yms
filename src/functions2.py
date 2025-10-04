@@ -1,6 +1,6 @@
 from classes import *
-from typing import BinaryIO, TextIO
 from re import match
+from typing import BinaryIO, TextIO
 
 def read_header(name: str) -> list:
     c_file: BinaryIO = open(name + ".yusm", "r+b")
@@ -14,19 +14,40 @@ def read_header(name: str) -> list:
         settings.append(value.value)
     return settings
 
-def pat_tokenize(line: str) -> tuple[int, int, int]:
-    return 0, 0, 0
+def isdigit(char: str) -> bool:
+    if 48 <= ord(char) <= 57:
+        return True
+    else:
+        return False
+
+def tokenize(line: str) -> list[int]:
+    tokens: list[int] = []
+    str_token: str = ""
+    digit_flag: bool = False
+    line += chr(255)
+    for char in line:
+        match isdigit(char):
+            case True:
+                str_token += char
+                digit_flag = True
+            case False:
+                if digit_flag:
+                    tokens.append(int(str_token))
+                    str_token = ""
+                digit_flag = False
+    return tokens
 
 def read_pattern(name: str) -> list[Sample]:
     pattern_file: TextIO = open(name + ".pat")
     pattern_data: list[str] = pattern_file.readlines()
     sample_list: list[Sample] = []
+    _sample: list = [0, 0, 0]
     for line in range(len(pattern_data)):
         pattern_data[line] = pattern_data[line].replace(" ", "")
-        print(pattern_data[line])
         if match(REM_ABS_LENGTH, pattern_data[line]):
-            sample_list.append(Sample(0, 0, 0))
+            _sample = tokenize(pattern_data[line])
+            _sample[2] -= _sample[1]
         elif match(REM_REL_LENGTH, pattern_data[line]):
-            sample_list.append(Sample(1, 1, 1))
-    print(pattern_data)
+            _sample = tokenize(pattern_data[line])
+        sample_list.append(Sample(*_sample))
     return sample_list

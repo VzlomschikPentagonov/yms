@@ -19,7 +19,7 @@ class Header:
         self.bits = bits
 
 class Sample:
-    def __init__(self, note: c_uint8 | int = 69,
+    def __init__(self, note: c_uint8 | int = 0,
                  start: c_uint16 | int = 0,
                  length: c_uint16 | int = 0):
         self.note = note
