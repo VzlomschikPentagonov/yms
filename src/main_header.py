@@ -1,4 +1,4 @@
-from functions import *
+from func_header import *
 from typing import BinaryIO
 
 def main() -> None:

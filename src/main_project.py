@@ -1,13 +1,8 @@
-from functions import *
+from func_project import *
 from typing import BinaryIO
 
 def main() -> None:
-    s: tuple = read_settings()
-    h: Header = Header(*s)
-    b: bytes = get_header(h)
-    print(b, len(b))
-    f: BinaryIO = open(h.name + ".yusm", "w+b")
-    f.write(b)
+    create_project("test")
     return None
 
 if __name__ == "__main__":

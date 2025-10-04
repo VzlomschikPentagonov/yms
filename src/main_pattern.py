@@ -1,4 +1,4 @@
-from functions2 import *
+from func_pattern import *
 
 def mainkraft() -> None:
     s: list = read_header("test")

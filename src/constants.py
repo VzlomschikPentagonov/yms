@@ -33,6 +33,7 @@ SETTINGS_FILE_SYNTAX: dict[str: str] = {"e": "Name: ",
                                         "g": "Length: ",
                                         "q": "Frequency: ",
                                         " ": "Bit depth: "}
+DIRS: list[str] = ["", "/patterns", "/main"]
 # regex match strings
 REM_ABS_LENGTH = "\\d+:\\d+-\\d+"
 REM_REL_LENGTH = "\\d+:\\d+/\\d+"
