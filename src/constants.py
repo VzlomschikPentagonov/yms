@@ -35,5 +35,6 @@ SETTINGS_FILE_SYNTAX: dict[str: str] = {"e": "Name: ",
                                         " ": "Bit depth: "}
 DIRS: list[str] = ["", "/patterns", "/main"]
 # regex match strings
-REM_ABS_LENGTH = "\\d+:\\d+-\\d+"
-REM_REL_LENGTH = "\\d+:\\d+/\\d+"
+REM_ABS_LENGTH = "^(\\d+:\\d+-\\d+)"
+REM_REL_LENGTH = "^(\\d+:\\d+\\+\\d+)"
+REM_COMMENT = "^(//)*"

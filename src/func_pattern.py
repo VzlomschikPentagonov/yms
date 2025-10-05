@@ -49,5 +49,7 @@ def read_pattern(name: str) -> list[Sample]:
             _sample[2] -= _sample[1]
         elif match(REM_REL_LENGTH, pattern_data[line]):
             _sample = tokenize(pattern_data[line])
+        elif match(REM_COMMENT, pattern_data[line]):
+            break
         sample_list.append(Sample(*_sample))
     return sample_list
