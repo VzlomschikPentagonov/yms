@@ -6,5 +6,7 @@ def generate_tones() -> list[float]:
     tones: list[float] = [base * (1 << j) * i for j in range(11) for i in power]
     return tones[3:123]
 
-def linear_interpolation(start: float, end: float, dist: float) -> float:
+def linear_interpolation(start: float,
+                         end: float,
+                         dist: float) -> float:
     return start * (1 - dist) + end * dist
